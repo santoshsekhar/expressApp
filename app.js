@@ -9,6 +9,11 @@ const app = express()
 
 // Passport config
 require('./config/passport')(passport);
+
+app.get('/', (req,res)=>{
+  res.sendFile(__dirname + '/home.html')
+})
+
 // Data Base configuration
 
 const db = require('./config/keys').MongoURI
@@ -54,6 +59,7 @@ app.use((req,res, next)=> {
 
 app.use('/', require('./routes/index'))
 app.use('/users', require('./routes/users'))
+
 
 
 const PORT = process.env.PORT || 8000

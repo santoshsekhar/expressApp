@@ -4,7 +4,9 @@ const router = express.Router();
 const { ensureAuthenticated }= require('../config/auth')
 
 //  main page
-router.get('/', (req,res)=> res.render('main'))
+// router.get('/', (req,res)=> res.render('main'))
+
+
 
 router.get('/signIn',(req,res)=> res.render('welcome'))
 
